@@ -1,6 +1,7 @@
 airbnb/profiles.yml
 airbnb/target*/
 logs/
+target/
 
 airbnb/package-lock.yml
 airbnb/dbt_packages/
