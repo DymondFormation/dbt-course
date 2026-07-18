@@ -96,12 +96,15 @@ models:
       - dbt_expectations.expect_table_row_count_to_equal_other_table:
           compare_model: source('airbnb', 'listings')
     columns:
-      - name: price
-        description: "Price per night for the listing"
+      - name: price_usd
+        description: "Price of the listing in USD"
         data_type: decimal
         tests:
           - dbt_expectations.expect_column_values_to_be_of_type:
               column_type: number
+          - dbt_expectations.expect_column_median_to_be_between:
+              min_value: 50
+              max_value: 500
           - dbt_expectations.expect_column_max_to_be_between:
               max_value: 100000
               config:
