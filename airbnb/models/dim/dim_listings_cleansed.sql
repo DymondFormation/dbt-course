@@ -24,6 +24,7 @@ SELECT
         REPLACE(price_str, '$', '')
         AS DECIMAL(10,2)
         ) AS price,
+    price_str,
     created_at,
     updated_at
 FROM
